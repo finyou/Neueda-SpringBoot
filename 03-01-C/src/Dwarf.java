@@ -17,6 +17,12 @@ public class Dwarf {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	public Dwarf(String name, String author, String image) {
+		super();
+		this.name = name;
+		this.author = author;
+		this.image = image;
+	}
 	public String getImage() {
 		return image;
 	}

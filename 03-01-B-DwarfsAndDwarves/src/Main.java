@@ -19,6 +19,10 @@ public class Main {
 	hangry.setName("Hangry");
 	hangry.setAuthor("Disney");
 	hangry.setImage("Hangry.png");
+	
+	dwarfes.add(sleepy);
+	dwarfes.add(happy);
+	dwarfes.add(hangry);
 	}
 
 }
