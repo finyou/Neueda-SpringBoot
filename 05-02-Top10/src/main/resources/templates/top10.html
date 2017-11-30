@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<title th:text="${pageTitle}">Weird Animals</title>
+</head>
+<body>
+<nav th:replace="layouts/nav ::navFragment">
+</nav>
+<h1>Top 10 Weird Animals</h1>
+<table class="table table-striped">
+
+	<thead>
+	<tr>
+	<th>Name</th>
+		<th>Picture</th>
+			<th>Placing</th>
+	</tr>
+	</thead>
+<tbody>
+	<tr th:each="top10: ${Top10}">
+		<td th:text="${top10.name}"></td>
+		<td><img src="../static/ayeaye.jpg" th:src="@{/} + ${top10.image}" width="400" height="300"/>
+		</td>
+		<td th:text="${top10.placing}"></td>
+		</tr>
+		</tbody>
+		</table>
+		</body>
+</html>
