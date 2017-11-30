@@ -6,12 +6,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-	<title th:text="${pageTitle}">Largest Floor Area</title>
+	<title th:text="${pageTitle}">Largest Usable Volume</title>
 </head>
 <body>
 <nav th:replace="layouts/nav ::navFragment">
 </nav>
-<h1>Largest Floor Area</h1>
+<h1>Largest Usable Volume</h1>
 <table class="table table-striped">
 
 	<thead>
@@ -20,14 +20,19 @@
 		<th>Picture</th>
 			<th>Country</th>
 				<th>Place</th>
-					<th>Floor Area</th>
+					<th>Usable Volume</th>
 	</tr>
 	</thead>
 <tbody>
-	<tr th:each="dwarf: ${dwarfs}">
-		<td th:text="${dwarf.name}">Grumpy</td>
-		<td><img src="../static/Grumpy.png" th:src="@{/} + ${dwarf.image}" width="100" height="150"/>
+	<tr th:each="volume: ${Buildings}">
+		<td th:text="${volume.name}"></td>
+
+		
+		<td><img src="../static/Usable Volume/1_Boeing_Everett_Plant.jpg" th:src="@{/Usable Volume/} + ${volume.image}" width="100" height="150"/>
 		</td>
+		<td th:text="${volume.country}"></td>
+		<td th:text="${volume.place}"></td>
+		<td th:text="${volume.size}"></td>
 		</tr>
 		</tbody>
 		</table>
