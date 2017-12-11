@@ -7,5 +7,9 @@ import uk.ac.belfastmet.titanic.domain.Passenger;
 
 public interface PassengerRepository extends CrudRepository<Passenger, Integer> {
 
+	Object findBySurvived(int i);
+
+	Object findByshipClass(int i);
+
 
 }

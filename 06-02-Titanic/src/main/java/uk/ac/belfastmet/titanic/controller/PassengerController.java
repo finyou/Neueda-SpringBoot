@@ -32,6 +32,17 @@ public class PassengerController {
 	model.addAttribute("passengers", passengerRepository.findAll());
 		return "passengerPage";
 	}
-	
+	@GetMapping("/first-class")
+	public String firstClassPassengers(Model model) {
+	model.addAttribute("pageTitle", "First Class Passengers");
+	model.addAttribute("passengers", passengerRepository.findByshipClass(1));
+		return "passengerPage";
+	}
+	@GetMapping("/survivors")
+	public String survivedPassengers(Model model) {
+	model.addAttribute("pageTitle", "Survived Passengers");
+	model.addAttribute("passengers", passengerRepository.findBySurvived(1));
+		return "passengerPage";
+	}
 
 }
