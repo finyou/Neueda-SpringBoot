@@ -24,6 +24,7 @@ public class HomeController {
 	public String goToCerealPage() {
 		return "cerealPage";
 	}
+	
 
 }
 

@@ -13,29 +13,28 @@
 <title th:text="${pageTitle}">Cereal Page</title>
 </head>
 <body>
-	<nav th:replace="layouts/nav ::navFragment"></nav>
+	<nav th:replace="Layouts/nav ::navFragment"></nav>
 	<h1>Cereal Information</h1>
 	<table class="table table-striped">
 
 		<thead>
+			<tr>
+				<th>Manufacturer</th>
+				<th>Cereal</th>
+			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="cereal ${cereals}">
+			<tr th:each="cereal: ${cereals}">
 				<td th:text="${cereal.manufacturer}"></td>
-				<td th:text="${cereal.cereal}"></td>
-				<td th:text="${cereal.energy}"></td>
-				<td th:text="${cereal.calories}"></td>
-				<td th:text="${cereal.protein}"></td>
-				<td th:text="${cereal.carb}"></td>
-				<td th:text="${cereal.sugar}"></td>
-				<td th:text="${cereal.fat}"></td>
-				<td th:text="${cereal.saturates}"></td>
-				<td th:text="${cereal.fibre}"></td>
-				<td th:text="${cereal.sodium}"></td>
-				<td th:text="${cereal.salt}"></td>
-				<td th:text="${cereal.iron}"></td>
+				<td th:text="${cereal.name}"></td>
+				<td><a th:href="@{cerealPage/cereal/view/} + ${cereal.cerealID}">View</a></td>
+				<td><a th:href="@{cerealPage/cereal/Edit/} + ${cereal.cerealID}">Edit</a></td>
+				<td><a th:href="@{cerealPage/cereal/Delete/} + ${cereal.cerealID}">Delete</a></td>
+				
 			</tr>
+
 		</tbody>
 	</table>
+	<a href="/cerealPage/cereal/add" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Add!</a>
 </body>
 </html>
