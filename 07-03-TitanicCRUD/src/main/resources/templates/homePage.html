@@ -22,6 +22,10 @@
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
 
+<div class="alert alert-danger" role="alert" th:if="${message}">
+		<p th:text="${message}"></p>
+	</div>
+
 
 <h1>Titanic Home Page</h1>
 	
