@@ -15,6 +15,8 @@
 <body>
 	<nav th:replace="Layouts/nav ::navFragment"></nav>
 	<h1>Cereal Information</h1>
+
+
 	<table class="table table-striped">
 
 		<thead>
@@ -27,14 +29,23 @@
 			<tr th:each="cereal: ${cereals}">
 				<td th:text="${cereal.manufacturer}"></td>
 				<td th:text="${cereal.name}"></td>
-				<td><a th:href="@{cerealPage/cereal/view/} + ${cereal.cerealID}">View</a></td>
-				<td><a th:href="@{cerealPage/cereal/Edit/} + ${cereal.cerealID}">Edit</a></td>
-				<td><a th:href="@{cerealPage/cereal/Delete/} + ${cereal.cerealID}">Delete</a></td>
-				
+				<td><a
+					th:href="@{cerealPage/cereal/view/} + ${cereal.cerealID}"
+					class="btn btn-secondary btn-lg active" role="button"
+					aria-pressed="true">View</a></td>
+				<td><a
+					th:href="@{cerealPage/cereal/Edit/} + ${cereal.cerealID}"
+					class="btn btn-secondary btn-lg active" role="button"
+					aria-pressed="true">Edit</a></td>
+				<td><a
+					th:href="@{cerealPage/cereal/Delete/} + ${cereal.cerealID}"
+					class="btn btn-secondary btn-lg active" role="button"
+					aria-pressed="true">Delete</a></td>
 			</tr>
-
 		</tbody>
 	</table>
-	<a href="/cerealPage/cereal/add" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Add!</a>
+	<a href="/cerealPage/cereal/add"
+		class="btn btn-secondary btn-lg active" role="button"
+		aria-pressed="true">Add!</a>
 </body>
 </html>
