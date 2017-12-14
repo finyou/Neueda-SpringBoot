@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+
+		<h1 th:text="${title}">Create</h1>
+		<br />
+	</div>
+
+
+	<div class="container">
+
+		<form class="form-horizontal" th:action="@{/rhiPage/rhi/save}"
+			th:object="${rhi}" method="post">
+			
+			
+			
+			
+			<!-- hidden field is important! -->
+			<input type="hidden" th:field="${rhi.rhiId}" />
+			
+			<label class="col-md-2">RHI Details</label>
+			
+
+			
+			<br />
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Details</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td><input type="text" class="form-control"
+							th:field="${rhi.name}" /></td>
+					</tr>
+					<tr>
+						<td>Survived</td>
+						<td><input type="text" class="form-control"
+							th:field="${rhi.date}" /></td>
+					</tr>
+					<tr>
+						<td>Class</td>
+						<td><input type="text" class="form-control"
+							th:field="${rhi.location}" /></td>
+					</tr>
+					<tr>
+						<td>Sex</td>
+						<td><input type="text" class="form-control"
+							th:field="${rhi.technology}" /></td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td><input type="text" class="form-control"
+							th:field="${rhi.capacity}" /></td>
+					</tr>
+					<tr>
+						<td>SibSp</td>
+						<td><input type="text" class="form-control"
+							th:field="${rhi.payments}" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+</body>
+</html>

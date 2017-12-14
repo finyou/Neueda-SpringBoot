@@ -10,7 +10,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-<title th:text="${pageTitle}">Passenger Page</title>
+<title th:text="${pageTitle}">Participants Page</title>
 </head>
 <style>
 * {box-sizing: border-box;}
@@ -89,7 +89,7 @@ body {margin:0;font-family:Arial;}
 
 <div class="topnav">
   <div class="search-container">
-    <form action="/passengerPage/search" method="POST">
+    <form action="/rhiPage/search" method="POST">
       <input type="text" placeholder="Search.." name="name"/>
       <button type="submit">Submit</button>
     </form>
@@ -106,24 +106,24 @@ body {margin:0;font-family:Arial;}
 		<thead>
 		</thead>
 		<tbody>
-			<tr th:each="passenger: ${passengers}">
-				<td th:text="${passenger.name}"></td>
+			<tr th:each="rhi: ${rhis}">
+				<td th:text="${rhi.name}"></td>
 				<td><a
-					th:href="@{passengerPage/passenger/view/} + ${passenger.passengerId}"
+					th:href="@{rhiPage/rhi/view/} + ${rhi.rhiId}"
 					class="btn btn-secondary btn-lg active" role="button"
 					aria-pressed="true">View</a></td>
 				<td><a
-					th:href="@{passengerPage/passenger/Edit/} + ${passenger.passengerId}"
+					th:href="@{rhiPage/rhi/Edit/} + ${rhi.rhiId}"
 					class="btn btn-secondary btn-lg active" role="button"
 					aria-pressed="true">Edit</a></td>
 				<td><a
-					th:href="@{passengerPage/passenger/Delete/} + ${passenger.passengerId}"
+					th:href="@{rhiPage/rhi/Delete/} + ${rhi.rhiId}"
 					class="btn btn-secondary btn-lg active" role="button"
 					aria-pressed="true">Delete</a></td>
 			</tr>
 		</tbody>
 	</table>
-		<a href="/passengerPage/passenger/add"
+		<a href="/rhiPage/rhi/add"
 		class="btn btn-secondary btn-lg active" role="button"
 		aria-pressed="true">Add!</a>
 </body>

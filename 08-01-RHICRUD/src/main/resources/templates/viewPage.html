@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<title th:text="${pageTitle}">Cereal Info</title>
+</head>
+<body>
+	<nav th:replace="Layouts/nav ::navFragment"></nav>
+	<h1 th:each="rhi:${rhi}" th:text="${rhi.name}"></h1>
+	<table class="table table-striped">
+
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Location</th>
+				<th>Technology</th>
+				<th>Capacity</th>
+				<th>Payments</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="rhi: ${rhi}">
+				<td th:text="${rhi.name}"></td>
+				<td th:text="${rhi.date}"></td>
+				<td th:text="${rhi.location}"></td>
+				<td th:text="${rhi.technology}"></td>
+				<td th:text="${rhi.capacity}"></td>
+				<td th:text="${rhi.payments}"></td>
+			</tr>
+
+		</tbody>
+	</table>
+</body>
+</html>
