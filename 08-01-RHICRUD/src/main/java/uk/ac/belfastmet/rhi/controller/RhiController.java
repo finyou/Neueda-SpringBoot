@@ -36,19 +36,19 @@ public class RhiController {
 	@GetMapping("")
 	public String allRhi(Model model) {
 	model.addAttribute("pageTitle", "All Participants");
-	model.addAttribute("rhi", rhiRepository.findAll());
+	model.addAttribute("rhis", rhiRepository.findAll());
 		return "rhiPage";
 	}
 	@PostMapping("/search")
 	public String viewPage(@RequestParam("name") String name, Model model) {
 	model.addAttribute("pageTitle", "Search Result");
-	model.addAttribute("rhi", rhiRepository.findByNameContaining(name));
+	model.addAttribute("rhis", rhiRepository.findByNameContaining(name));
 		return "rhiSearch";
 	}
 	@GetMapping("/rhi/view/{rhiId}")
 	public String viewPage(@PathVariable("rhiId") Integer rhiId, Model model) {
 		model.addAttribute("pageTitle", "View Participant");
-		model.addAttribute("rhi", rhiRepository.findOne(rhiId));
+		model.addAttribute("rhis", rhiRepository.findOne(rhiId));
 		return "viewPage";
 	}
 	@GetMapping("rhi/Edit/{rhiId}")
@@ -60,7 +60,7 @@ public class RhiController {
 	@GetMapping("/rhi/add")
 	public String createRhi(Model model) {
 		model.addAttribute("page title", "Add Participant");
-		model.addAttribute("rhi", new Rhi());
+		model.addAttribute("rhis", new Rhi());
 		return "editPage";
 	}
 	@GetMapping("/rhi/Delete/{rhiId}")
