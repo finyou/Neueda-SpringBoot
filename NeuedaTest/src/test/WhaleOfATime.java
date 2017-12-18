@@ -15,7 +15,7 @@ public class WhaleOfATime {
 		
 	
 	
-	for (int i=0; i<=whaleArray.length; i++) {
+	for (int i=0; i<whaleArray.length; i++) {
 		if (whaleArray[i].getMainOcean().equals("Atlantic")){
 			System.out.println("Atlantic Whales: " + whaleArray[i].getName());
 		}

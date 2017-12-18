@@ -51,7 +51,7 @@ public class Whale extends Animal {
 
 	@Override
 	public String toString() {
-		return "Whale [mainOcean=" + mainOcean + ", weight=" + weight + ", maxSpeed=" + maxSpeed + ", length=" + length
+		return "Whale [name=" + getName() + ", mainOcean=" + mainOcean + ", weight=" + weight + ", maxSpeed=" + maxSpeed + ", length=" + length
 				+ "]";
 	}
 	
